@@ -1,0 +1,27 @@
+.il-footer {
+    padding: 10px 0;
+    background-color: $footer-bg;
+    border-top: 1px solid $nav-tabs-border-color;
+
+    &.navbar-fixed-bottom {
+        @media (min-width: $screen-sm-min) {
+            margin-left: $nav-width;
+        }
+    }
+
+    .footer-left {
+        text-align: center;
+
+        @media (min-width: $screen-sm-min) {
+            text-align: left;
+        }
+    }
+
+    .footer-right {
+        text-align: center;
+
+        @media (min-width: $screen-sm-min) {
+            text-align: right;
+        }
+    }
+}

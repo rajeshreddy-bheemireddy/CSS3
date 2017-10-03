@@ -1,0 +1,77 @@
+.toggle.il-toggle .btn {
+    border: 0;
+}
+
+.toggle.il-toggle,
+.toggle-on.il-toggle,
+.toggle-off.il-toggle {
+    @include border-radius(7px);
+}
+
+.toggle.il-toggle .toggle-handle {
+    @include border-radius(5px);
+    position: absolute;
+    right: 66%;
+    width: 10px;
+    height: 10px;
+    margin-top: 1px;
+    padding: 0;
+}
+
+.toggle.il-toggle .toggle-on {
+    line-height: 0;
+    right: 70%;
+    padding: 1px 6px 0 0;
+    font-size: 10px;
+}
+
+.toggle.il-toggle .toggle-group {
+    width: calc(200% + 26px);
+}
+
+.toggle.il-toggle.off .toggle-handle {
+    right: 53%;
+
+    &.btn-default:hover {
+        background-color: $btn-default-bg;
+    }
+}
+
+.toggle.il-toggle .toggle-off {
+    left: 31%;
+    width: 50%;
+    font-size: 10px;
+
+    &.btn-default {
+        line-height: 0;
+        padding: 1px 0 0 3px;
+        color: $btn-primary-color;
+        background-color: $gray-light;
+
+        &:hover {
+            background-color: $gray;
+        }
+    }
+}
+
+.toggle.il-toggle[disabled] {
+
+    .toggle-on.btn-success:hover {
+        background-color: $btn-success-bg;
+    }
+
+    .toggle-off.btn-default:hover {
+        background-color: $gray-light;
+    }
+
+    .toggle-handle.btn-default:hover {
+        background-color: $btn-default-bg;
+    }
+}
+
+.toggle.il-toggle.btn-sm {
+    min-width: 30px;
+    max-width: 30px;
+    min-height: 14px;
+    max-height: 14px;
+}

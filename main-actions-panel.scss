@@ -1,0 +1,60 @@
+.il-main-actions-panel {
+    height: $main-actions-panel-height-mobile;
+
+    &.single-action {
+        height: $main-actions-panel-height;
+
+        .nav-main-actions .nav {
+            margin-top: 0;
+        }
+    }
+
+    @media (min-width: $screen-sm-min) {
+        height: $main-actions-panel-height; 
+    }
+
+    
+    // -----------------------------------------------------------------
+    .il-control {
+    
+        @include box-shadow(none);
+        height: $il-input-height-base;
+    
+        &:-ms-input-placeholder {
+            $ie-fix: 1;
+            line-height: $ie-fix;
+        }
+    
+        ~ .datepicker-toggle {
+            bottom: 5px;
+        }
+    
+        .dropdown-select-text {
+            margin-top: -8px;
+        }
+    
+        .ilicon-chevron-down {
+            top: -3px;
+        }
+    
+        // prevents cutting off trailing letters like g,p etc.
+        &.form-control {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    
+    }
+    // -----------------------------------------------------------------
+}
+
+.nav-main-actions .nav {
+    margin: 15px 0 0;
+
+    @media (min-width: $screen-sm-min) {
+        margin-top: 0;
+    }
+
+    >li {
+        float: left;
+    }
+}

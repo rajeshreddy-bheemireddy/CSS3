@@ -1,0 +1,132 @@
+.filter-wrap {
+    position: fixed;
+    top: $nav-height + $grid-gutter-width / 2;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    padding-right: $grid-gutter-width / 2;
+    padding-left: $grid-gutter-width / 2;
+
+    @media (min-width: $screen-sm-min) {
+        top: inherit;
+        left: $nav-width + $grid-gutter-width / 2;
+        width: calc(100% - #{$nav-width});
+        margin-top: 15px;
+        margin-left: -$grid-gutter-width / 2; // because is wrapped into the main container-fluid
+    }
+}
+
+.filter-box {
+    padding: $grid-gutter-width / 2;
+
+    .filter-box-radios label {
+        margin-left: 20px;
+        font-weight: normal;
+    }
+
+    .filter-radios {
+        display: block;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid $alert-info-border;
+    }
+
+    .input-label {
+        font-weight: normal;
+    }
+}
+
+.il-managed-columns.popover {
+    @include border-radius(0);
+    width: 300px;
+
+    .arrow {
+        right: 10px;
+        left: auto;
+    }
+
+    .input-label-popover {
+        font-weight: normal;
+        cursor: pointer;
+    }
+
+    input {
+        position: relative;
+        top: -1px;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        vertical-align: text-bottom;
+    }
+
+    .toolbar-items {
+        padding-left: 15px;
+        list-style: none;
+    }
+
+    .popover-content {
+        padding: 15px 15px 8px 0;
+    }
+}
+
+.il-btn-icon-click:focus {
+    outline: 0 none;
+    outline-style: none;
+}
+
+.filter-popover {
+    @include border-radius(0);
+    background-color: $alert-info-bg;
+    border-color: $alert-info-border;
+
+    &.bottom > .arrow {
+        border-bottom-color: $alert-info-border;
+    }
+
+    &.bottom > .arrow:after {
+        border-bottom-color: $alert-info-bg;
+    }
+}
+
+.filter-toggle.active {
+    @media (max-width: $screen-sm-min) {
+        // uncomment when core sass is imported
+        //@extend .btn-info;
+    }
+
+    @media (min-width: $screen-sm-min) {
+        &:before,
+        &:after {
+            position: absolute;
+            left: 50%;
+            z-index: 10000;
+            content: '\00a0';
+        }
+
+        &:before {
+            // creates shadow for the arrow
+            @include arrow-top(11px, $alert-info-border);
+            top: 20px;
+            margin-left: -12px;
+        }
+
+        &:after {
+            @include arrow-top(10px, $alert-info-bg);
+            top: 22px;
+            margin-left: -2px;
+        }
+    }
+}
+
+.checkbox-margin-top {
+    margin-top: 28px;
+}
+
+.filter-datepicker {
+    position: relative;
+
+    .datepicker-toggle {
+        right: 12px;
+        bottom: 4px;
+    }
+}

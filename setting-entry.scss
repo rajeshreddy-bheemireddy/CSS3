@@ -1,0 +1,22 @@
+$setting-entry-title-color: #222;
+$setting-entry-details-color: #666;
+$setting-entry-details-line-height: .75;
+
+
+.setting-entry-title {
+    font-family: $secondary-font-name;
+    font-size: $medium-font-size;
+    font-weight: normal;
+    color: $setting-entry-title-color;
+    text-align: left;
+}
+
+.setting-entry-details {
+    display: block;
+    margin-bottom: 5px;
+    font-family: $secondary-font-name;
+    font-size: $font-size-small;
+    line-height: $setting-entry-details-line-height;
+    color: $setting-entry-details-color;
+    text-align: left;
+}

@@ -1,0 +1,26 @@
+
+.il-grid-header {
+    height: $grid-actions-panel-height;
+    padding: 10px 0;
+    margin: 0;
+    border: 1px solid $table-border-color;
+    border-width: 1px 1px 0;
+
+    > :first-child {
+        padding-left: 5px;
+    }
+
+    > :last-child {
+        padding-right: 5px;
+    }
+}
+
+// required for fitting grids to 100% of height
+.grid-component,
+.modal-jqxgridwrap {
+    height: 100%;
+}
+
+.modal-jqxgridwrap {
+    position: relative;
+}

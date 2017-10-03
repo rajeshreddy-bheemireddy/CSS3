@@ -1,0 +1,219 @@
+// ***** PLACEHOLDER STYLES *****
+$placeholder-color:#ddd;
+
+%medialist-item-before {
+  // Copied from ilcss/assets/sass/modifiers/_alerts.scss .alerts:before
+    @extend %alert:before;
+    @include border-radius(0);
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    width: 5px;
+    background-color: $brand-secondary;
+}
+
+// ***** end PLACEHOLDER STYLES *****
+
+// ***** MEDALIST STYLES *****
+.medialist {
+    padding: 0;
+    margin-bottom: 8px;
+
+    &::before {
+        @extend %medialist-item-before;
+    }
+
+    .media-status {
+        white-space: nowrap;
+
+        .status {
+            padding: 0 10px;
+        }
+    }
+
+    &.new {
+
+        .media-status .status {
+            color: $brand-info;
+        }
+
+        &::before {
+            @extend %medialist-item-before;
+            background-color: $brand-info;
+        }
+    }
+
+    &.in-placeholder {
+        .media-status .status {
+            color: $placeholder-color;
+        }
+
+        &::before {
+            @extend %medialist-item-before;
+            background-color: $placeholder-color;
+        }
+    }
+
+    &.in-progress {
+        .media-status .status {
+            color: $brand-warning;
+        }
+
+        &::before {
+            @extend %medialist-item-before;
+            background-color: $brand-warning;
+        }
+    }
+
+    &.done {
+        .media-status .status {
+            color: $brand-success;
+        }
+
+        &::before {
+            @extend %medialist-item-before;
+            background-color: $brand-success;
+        }
+    }
+
+    .media-body {
+        display: block;
+        width: 100%;
+        overflow: visible;
+    }
+
+    .media {
+        overflow: visible;
+    }
+
+    .medialist-summary {
+        padding: 4px 15px 4px 0;
+    }
+
+    .medialist-detail {
+        .list-group-item {
+            border: 0;
+        }
+
+        .medialist-detail-textedit {
+            padding: 10px 15px 5px 9px;
+        }
+    }
+
+    .medialist-unread {
+        font-weight: bold;
+    }
+}
+
+.media-container {
+    height: 100%;
+}
+
+.media-checkbox {
+    display: none;
+
+    &.multiselectmedia {
+        display: inline;
+    }
+}
+
+.media-edit-mode,
+.media-header:hover {
+    .media-checkbox {
+        display: inline;
+    }
+
+    .media-icon {
+        display: none;
+    }
+}
+
+.media-item {
+    &.selected .media-header {
+        color: $row-selected-color;
+        background: $row-selected-background-color;
+
+        .text-muted,
+        .status,
+        .ilicon,
+        a {
+            color: $row-selected-color;
+        }
+    }
+}
+
+.media-header {
+    .media-heading {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .media-topic {
+        @include inline-block();
+        width: 20%;
+        margin: 0 5px;
+        overflow: hidden;
+        font-weight: normal;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        vertical-align: middle;
+    }
+
+    .media-title {
+        @include inline-block();
+        width: 49%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .media-submitter {
+        @include inline-block();
+        width: 20%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &.collapsed {
+        .media-metadata {
+            display: none;
+        }
+    }
+}
+
+.media-actions {
+    @include box-shadow($gray-lighter 0 5px 3px);
+    z-index: 1;
+    padding-bottom: 5px;
+
+    .btn {
+        margin-top: 5px;
+    }
+
+    .btn-link {
+        padding: 0 10px;
+    }
+}
+
+.media-type-icon {
+    @include inline-block;
+    width: 30px;
+    margin-top: 5px;
+    vertical-align: top;
+}
+
+.media-type-details {
+    @include inline-block;
+    width: calc(100% - 40px);
+}
+
+.media-metadata {
+    @extend %text-muted !optional;
+    @extend %small !optional;
+
+    &.selected {
+        color: $row-selected-color;
+    }
+}
+// ***** end MEDALIST STYLES *****
